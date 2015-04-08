@@ -1,0 +1,427 @@
+NAME,(Re),(Prot),ADDITIONAL COMMENTS,TYPE,INFORMATION,STATISTICS,RANGE,MISSINGS
+,,,,,,,,
+id,,,,numeric,study ID,avg = 231.500 +/- 133.512,[1.000 ; 462.000],0
+,,,,,,,,
+age,,,,numeric,Age at operation (years),avg = 72.091 +/- 7.018,[57.000 ; 93.000],0
+,,,,,,,,
+surviv,,,,numeric,Survival from operation date (months),avg = 41.481 +/- 34.065,[0.000 ; 116.000],0
+,,,,,,,,
+status,,,Only useful ?Alive/Death from colorectal cancer,nominal,Current status,"mode = Dead (293), least = Alive (169)","Alive (169), Dead (293)",0
+,,,,,,,,
+cause,,,,nominal,Cause of death,"mode = Death from colorectal cancer (228), least = Unknown (1)","Alive (169), Death from colorectal cancer (228), Death from unrelated cause (64), Unknown (1)",0
+,,,,,,,,
+sex,,,,nominal,Sex,"mode = Male (266), least = Female (196)","Male (266), Female (196)",0
+,,,,,,,,
+tumtype,,,"Based on analysis of biopsy images / Chemical analysis, Remove Unknown",nominal,Tumour histological type (histology ?study of microscopic anatomy of cells and tissue),"mode = Adenocarcinoma (392), least = Columnar adenocarcinoma (4)","Adenocarcinoma (392), Mucinous adenocarcinoma (51), Columnar adenocarcinoma (4), Signet ring mucinous adenocarcinoma (7), Unknown (8)",0
+,,,,,,,,
+diff,,,Three tier system of Anaplasia (lack of cell differentiation),ordinal,Tumour grade of differentiation,"mode = Moderate (353), least = Unknown (9)","Well (29), Moderate (353), Poor (71), Unknown (9)",0
+,,,,,,,,
+tsite,,,Different symptoms for different location. Different growth properties,nominal,Site of primary finding,"mode = Rectal (181), least = Unknown (43)","Right colon (142), Left colon (96), Rectal (181), Unknown (43)",0
+,,,,,,,,
+dukes,,,"Original Dukes Classification ?4 types, C has 2 subtypes",ordinal,Dukes stage,"mode = B (177), least = Unknown (3)","A (68), B (177), C1 (138), C2 (21), D (55), Unknown (3)",0
+,,,,,,,,
+Dukes4,,,"As above, but without C subtypes and unknowns into missing",ordinal,Dukes A-D,avg = 2.438 +/- 0.885,[1.000 ; 4.000] (1) A (2) B (3) C (4) D,3
+,,,,,,,,
+Duke2,X,,Low/High ?Generates 2 classes from the above 4,ordinal,Duke2,avg = 1.466 +/- 0.499,"[1.000 ; 2.000]  (1) Low = A + B, (2) High = C + D",3
+,,,,,,,,
+tstage,,,Tumor site description ?how it spread there,ordinal,T stage (UICC - International Union Against Cancer),"mode = 3 (273), least = carcinoma in situ (6)","1 (21), 2 (53), 3 (273), 4a (15), 4b (78), carcinoma in situ (earliest) (6), unknown (16)",0
+,,,,,,,,
+tstage2,X,,"As above but without 4a,4b and unknowns into missing",ordinal,T Stage 2,"mode = 3 (273), least = carcinoma in situ (6)","1 (21), 2 (53), 3 (273), 4 (93), carcinoma in situ (6)",16
+,,,,,,,,
+nstage,,,"Degree of spread to regional lymph nodes | no A,B,C subcategories",ordinal,Nodal status (UICC),"mode = 0 (242), least = unknown (27)","0 (242), 1 (109), 2 (84), unknown (27)",0
+,,,,,,,,
+mstage,,,"Degree of spread to distant organs | no A,B subcategories",ordinal,Distant mets (UICC),"mode = 0 (402), least = unknown (6)","0 No spread (402), 1 Spread (54), unknown (6)",0
+,,,,,,,,
+vasc,,,Cancer cells getting into venous system,ordinal,Extramural vascular invasion,"mode = No (224), least = Unknown (110)","No (224), Yes (128), Unknown (110)",0
+,,,,,,,,
+EMVI,X,,As above but unknowns turned into missing,nominal,VI (extramural),avg = 0.364 +/- 0.482,"[0.000 ; 1.000] (0) No, (1) Yes",110
+,,,,,,,,
+disspec,,,Died from complications of operation,nominal,Disease specific survival,avg = 0.494 +/- 0.500,"[0.000 ; 1.000] (0) No, (1) Yes (died from complications)",0
+,,,,,,,,
+DSS,,,,nominal,DSS,avg = 0.398 +/- 0.490,[0.000 ; 1.000],0
+,,,,,,,,
+newtnm,,,"5 TNM stages ?0, I, II, III, IV, Unknown",ordinal,TNM stage,avg = 2.452 +/- 0.955,"[0.000 ; 5.000] (0) 0, (1) I, (2) II, (3) III, (4) IV, (5) Unknown",0
+,,,,,,,,
+tnm4cat,X,,"As above, but combines 0 and I",ordinal,"TNM stage (0+1) = 1, 2, 3, 4 and unknown",avg = 2.459 +/- 0.942,"[1.000 ; 5.000] (1) 0 + I, (2) II, (3) III, (4) IV, (5) Unknown",0
+,,,,,,,,
+tnmlowvs,X,,"As newtnm, but creates High and Low (ERROR ?Includes Unknowns in High)",ordinal,TNM stage low vs high,avg = 1.468 +/- 0.499,"[1.000 ; 2.000] (1) Low = 0,I,II; (2) High = III,IV, Unknowns",0
+,,,,,,,,
+colorect,X,,As tsite but no separation of Left/Right colon,nominal,Site of primary,avg = 1.578 +/- 0.657,"[1.000 ; 3.000] (1) Colon, (2) Rectal, (3) Unknown",0
+,,,,,,,,
+Location,X,,As above but unknowns turned into missing,nominal,Site of primary exc. unknowns,avg = 1.432 +/- 0.496,"[1.000 ; 2.000] (1) Colon, (2) Rectal",43
+,,,,,,,,
+distmets2,X,,"Same as mstage, unknowns into missing",nominal,Distant Mets,avg = 1.118 +/- 0.323,[1.000 ; 2.000] (1) No spread (2) Spread,6
+,,,,,,,,
+cd46,,X,Some tumours express this protein,nominal,CD46,avg = 1.474 +/- 0.500,"[1.000 ; 2.000]  (1) Low, (2) High",13
+,,,,,,,,
+cd59a,,X,Antigen / Gene,nominal,CD59 staining,"mode = Negative (387), least = Positive (62)","Negative (387), Positive (62) ? is present",13
+,,,,,,,,
+hl,,X,"MHC Class I, seq. A protein",nominal,MICA recode High/low,avg = 1.463 +/- 0.499,"[1.000 ; 2.000] (1) Low, (2) High",13
+,,,,,,,,
+p53,,X,Tumour suppressor protein,nominal,p53,avg = 1.503 +/- 0.501,[1.000 ; 2.000] (1) Positive (2) Negative,17
+,,,,,,,,
+ki67,,X,Protein associated with cell proliferation,nominal,Ki-67,avg = 1.697 +/- 0.460,"[1.000 ; 2.000] (1) Low, (2) High",20
+,,,,,,,,
+bcl2,,X,B-Cell lymphoma 2,nominal,Bcl-2,avg = 1.455 +/- 0.499,"[1.000 ; 2.000] (1) Low, (2) High",25
+,,,,,,,,
+p53bcl2,X,,Combination of p53 and bcl2,nominal,p53 / Bcl-2 combined,avg = 2.340 +/- 1.104,"[1.000 ; 4.000] (1) [1,1]; (2) [2,1]; (3) [2,2]; (4) [1,2] ?Missing don't match",30
+,,,,,,,,
+chk2,,X,CHECK 2 ?checkpoint homolog 2,nominal,Chk-2,avg = 1.880 +/- 0.326,"[1.000 ; 2.000] (1) Negative, (2) Positive",22
+,,,,,,,,
+pchk2,,X,Phospho-CHK2 Antibody,nominal,phospho chk-2,avg = 1.333 +/- 0.472,"[1.000 ; 2.000] (1) Negative, (2) Positive",23
+,,,,,,,,
+chk1,,X,CHECK 1 ?Cell cycle control / Mitosis,nominal,Chk-1,avg = 1.249 +/- 0.433,"[1.000 ; 2.000] (1) Negative, (2) Positive",24
+,,,,,,,,
+pchk1,,X,Phospho-CHK1 Antibody,nominal,phospho chk-1,avg = 1.128 +/- 0.335,"[1.000 ; 2.000] (1) Negative, (2) Positive",26
+,,,,,,,,
+atm,,X,Ataxia Telangiectasia Mutated protein,nominal,ATM,avg = 1.549 +/- 0.498,"[1.000 ; 2.000] (1) Negative, (2) Positive",45
+,,,,,,,,
+b2m,,X,Component of MHC-1 Molecules,nominal,Beta-2 microglobulin,avg = 1.833 +/- 0.373,"[1.000 ; 2.000] (1) Negative, (2) Positive *",7
+,,,,,,,,
+hc10,,X,Heterochromatin,ordinal,HC-10,avg = 2.629 +/- 0.712,[1.000 ; 3.000] (1) Negative (2) Low (3) High *,7
+,,,,,,,,
+mhc,,X,Major Histocompatibility Complex Class I,ordinal,MHC class-I combined,avg = 2.448 +/- 0.853,[1.000 ; 3.000] (1) Negative (2) Low (3) High *,7
+,,,,,,,,
+mhcallele,,X,,nominal,mhcallele,avg = 1.073 +/- 0.260,"[1.000 ; 2.000] (1) Negative, (2) Positive *",7
+,,,,,,,,
+ITTCcat,,,Intra-tumour T-Cells,nominal,TCPAA (Binned) T-Cell Proliferation Array,"mode = 15.01+ (234), least = <= 15.00 (121)","<= 15.00 (121), 15.01+ (234)",107
+,,,,,,,,
+tcellmhc,X,,T-Cell + MHC (mhc + ITTCcat),nominal,tcellmhc,avg = 4.412 +/- 1.773,"[1.000 ; 6.000] (1) Mhc -ve T cell, (2) Mhc lo T cell, (3) Mhc hi T cell, (4) Mhc -ve T cell, (5) Mhc lo T cell, (6) Mhc hi T cell",108
+,,,,,,,,
+p27nuc,,X,Cyclic dependant kinase inhibitor 1B (nucleus),nominal,p27 nuclear,avg = 0.519 +/- 0.500,"[0.000 ; 1.000] (0) Negative, (1) Positive *",44
+,,,,,,,,
+p27cyto,,X,Cyclic dependant kinase inhibitor 1B (cytoplasm),nominal,p27 cytoplasmic,avg = 0.189 +/- 0.392,"[0.000 ; 1.000] (0) Negative, (1) Positive *",44
+,,,,,,,,
+betmembr,,X,Beta-catenine (membrane),nominal,beta-catenin membrane,avg = 0.914 +/- 0.281,"[0.000 ; 1.000] (0) Negative, (1) Positive *",34
+,,,,,,,,
+betcytop,,X,Beta-catenine (cytoplasm),nominal,beta-catenin cytoplasmic,avg = 0.671 +/- 0.471,"[0.000 ; 1.000] (0) Negative, (1) Positive *",34
+,,,,,,,,
+betnucle,,X,Beta-catenine (nucleus),nominal,beta-catenin nuclear,avg = 0.479 +/- 0.500,"[0.000 ; 1.000] (0) Negative, (1) Positive *",34
+,,,,,,,,
+p21,,X,Cyclic dependant kinase inhibitor 1,nominal,p21,avg = 0.421 +/- 0.494,"[0.000 ; 1.000] (0) Negative, (1) Positive *",101
+,,,,,,,,
+p2150,,X,Cyclic dependant kinase inhibitor 1,nominal,p21 >50 vs <50%,avg = 0.136 +/- 0.343,"[0.000 ; 1.000] (0) p21 > 50%, (1) p21 < 50% *",101
+,,,,,,,,
+statcyto.p,,X,Signal transducer and activator of transcriptions I,numeric,Stat1 cytoplasmic percentage,avg = 78.111 +/- 38.104,[0.000 ; 100.000],57
+,,,,,,,,
+statnuc.p,,X,Signal transducer and activator of transcriptions I,numeric,Stat1 nuclear percentage,avg = 11.568 +/- 28.379,[0.000 ; 100.000],57
+,,,,,,,,
+statcyto.int,,X,Signal transducer and activator of transcriptions I,ordinal,Stat1 cytoplasmic intensity,"mode = Weak (168), least = Strong (38)","No staining (60), Weak (168), Moderate (139), Strong (38)",57
+,,,,,,,,
+statnuc.int,,X,Signal transducer and activator of transcriptions I,ordinal,Stat1 nuclear intensity,"mode = No staining (332), least = Weak (8)","No staining (332), Weak (8), Moderate (41), Strong (23)",58
+,,,,,,,,
+statcyto2,,X,Signal transducer and activator of transcriptions I,nominal,Stat1 cytoplasmic post neg,avg = 0.852 +/- 0.356,"[0.000 ; 1.000] (0) Negative, (1) Positive",57
+,,,,,,,,
+int2,,X,Proto-oncogene protein (FGF-3) (cytoplasm),nominal,cytoint2,avg = 0.437 +/- 0.497,"[0.000 ; 1.000] (0) Low, (1) High",57
+,,,,,,,,
+nucint2,,X,Proto-oncogene protein (FGF-3) (nucleus),nominal,nucint2,avg = 0.158 +/- 0.366,"[0.000 ; 1.000] (0) Low, (1) High",58
+,,,,,,,,
+trailint,,X,TRAIL-R2 Killer / DR5 (intensity),ordinal,TRAILR2 Intensity,"mode = Moderate (175), least = No staining (21)","No staining (21), Weak (151), Moderate (175), Strong (54)",61
+,,,,,,,,
+trailper,,X,TRAIL-R2 Killer / DR5 (percentage),numeric,TRAILR2 %,avg = 99.802 +/- 1.789,[80.000 ; 100.000],83
+,,,,,,,,
+trailint2,,X,TRAIL-R2 Killer / DR5,nominal,TRAIL-R2 Intensity2,"mode = 2.0 (229), least = 1.0 (172)","2.0 High (229), 1.0 Low (172)",61
+,,,,,,,,
+blc2trailr2,X,,Mixture of bcl2 and TRAIL-R2,nominal,Bcl-2 vs TRAIL-R2,"mode = Bcl-2+ TRAIL-R2 Str (116), least = Bcl2+ TRAIL-R2 Weak (62)","Bcl-2+ TRAIL-R2 Str (116), Bcl2+ TRAIL-R2 Weak (62), Bcl2- TRAIL-R2 Str (107), Bcl2- TRAIL-R2 Weak (106)",71
+,,,,,,,,
+bcl2trailr2ii,X,,"As blc2trailr2 ?pos bcl2 | str,weak TRAIL-R2",nominal,Bcl-2 vs TRAIL-R2 ii,"mode = Bcl2 + TRAIL-R2 Str (116), least = Bcl2+ TRAIL-R2 Weak (62)","Bcl2 + TRAIL-R2 Str (116), Bcl2+ TRAIL-R2 Weak (62)",284
+,,,,,,,,
+bcl2trailr2iii,X,,"As blc2trailr2 ?pos/neg bcl2 | str,str TRAIL-R2",nominal,Bcl-2 vs TRAIL-R2 iii,"mode = Bcl2+ TRAIL-R2 Str (116), least = Bcl2- TRAIL-R2 Str (107)","Bcl2+ TRAIL-R2 Str (116), Bcl2- TRAIL-R2 Str (107)",239
+,,,,,,,,
+p53trailr2,X,,Mixture of p53 and TRAIL-R2,nominal,p53 and TRAIL-R2 combined,"mode = p53+ TRAIL-R2 Str (114), least = p53- TRAIL-R2 Weak (82)","p53+ TRAIL-R2 Str (114), p53+ TRAIL-R2 Weak (86), p53- TRAIL-R2 Str (109), p53- TRAIL-R2 Weak (82)",71
+,,,,,,,,
+p53trailr2ii,X,,"As p53trailr2 ?pos/neg p53 | weak,str TRAIL-R2",nominal,p53 and TRAIL-R2 combined ii,"mode = p53- TRAIL-R2 Str (109), least = p53+ TRAIL-R2 Weak (86)","p53+ TRAIL-R2 Weak (86), p53- TRAIL-R2 Str (109)",267
+,,,,,,,,
+bcl2trailr2iv,X,,"As bcl2trailr2ii ?pos bcl2 (bcl2,not-bcl2) | pos TRAIL-R2",nominal,Bcl-2+/TRAIL-R2+ vs rest,"mode = Not Bcl2+/TRAIL-R2+ (275), least = Bcl-2+/TRAIL-R2+ (116)","Bcl-2+/TRAIL-R2+ (116), Not Bcl2+/TRAIL-R2+ (275)",71
+,,,,,,,,
+p53trailr2iii,X,,"As p53trailr2 ?neg p53 (p53,not-p53) | pos TRAIL-R2",nominal,p53-ve/TRAIL-R2+ve vs others,"mode = Not p53-ve/TRAIL-R2+ve (282), least = p53-ve/TRAIL-R2+ve (109)","p53-ve/TRAIL-R2+ve (109), Not p53-ve/TRAIL-R2+ve (282)",71
+,,,,,,,,
+p53trailr2iv,X,,"As p53trailr2 ?pos p53 (p53,not-p53) | neg TRAIL-R2",nominal,p53+ve/TRAIL-R2-ve vs others,"mode = Not p53+ve/TRAIL-R2-ve (305), least = p53+ve/TRAIL-R2-ve (86)","p53+ve/TRAIL-R2-ve (86), Not p53+ve/TRAIL-R2-ve (305)",71
+,,,,,,,,
+MLH1nuc,,X,,nominal,MLH1 nuclear intensity,avg = 1.435 +/- 1.011,"[0.000 ; 3.000] (0) Negative, (1) Weak, (2) Moderate, (3) Strong",46
+,,,,,,,,
+MSH2nuc,,X,,nominal,MSH2 nuclear intensity,avg = 1.928 +/- 0.934,"[0.000 ; 3.000] (0) Negative, (1) Weak, (2) Moderate, (3) Strong",44
+,,,,,,,,
+mlhnucre,X,,,nominal,MLH1 nuclear weak and strong,avg = 0.476 +/- 0.500,"[0.000 ; 1.000] (0) Weak, (1) Strong",46
+,,,,,,,,
+MLH1stained,X,,,nominal,MLH1 positive and negative,avg = 0.786 +/- 0.411,"[0.000 ; 1.000] (0) Positive, (1) Negative",46
+,,,,,,,,
+MSH2nucre,X,,,nominal,MSH2 nuclear positve and negative,avg = 0.737 +/- 0.441,"[0.000 ; 1.000] (0) Positive, (1) Negative",44
+,,,,,,,,
+MLH1MSH2,X,,,nominal,COMBINED +/- MLH1 AND MSH2,avg = 2.320 +/- 1.109,[0.000 ; 3.000],52
+,,,,,,,,
+MSIP,,,,nominal,MSIP+/DEFECTIVE,avg = 0.854 +/- 0.354,[0.000 ; 1.000],52
+,,,,,,,,
+msi,X,,,nominal,Micro-satellite instability,avg = 0.752 +/- 0.432,"[0.000 ; 1.000] (0) Missing MLH1, MSH2 or both, (1) MLH1 and MSH2 positive",46
+,,,,,,,,
+MMRnegative,X,,,nominal,MSH2 and/or MLH1 NEG,avg = 2.034 +/- 1.403,[0.000 ; 3.000],52
+,,,,,,,,
+combined,X,,,nominal,combination of MLH1nuc(+/-) and STAT1 nuc (combined+/-),avg = 1.776 +/- 0.899,[0.000 ; 3.000],60
+,,,,,,,,
+Chemo,,,,nominal,Chemotherapy,avg = 0.212 +/- 0.634,"[0.000 ; 3.000] (0) No chemotherapy, (1) 5FU Chemo, (2) Others adjuvant, (3) Chemo for mets/recurr",0
+,,,,,,,,
+Radio,,,,nominal,radiotherapy,avg = 0.416 +/- 1.246,"[0.000 ; 6.000](0) no radiotherapy, (1) pre operative long course, (2) pre operative short course, (3) post operative radiotherapy, (4) both pre and post, (5) unspecified adjuvant, (6) rt for mets or recurr",0
+,,,,,,,,
+radiorec,,,,nominal,radiorec,avg = 0.096 +/- 0.295,"[0.000 ; 1.000] (0) no RT, (1) RT",13
+,,,,,,,,
+CHEMOREC,,,,nominal,CHEMOREC,avg = 0.099 +/- 0.299,"[0.000 ; 1.000] (0) no CT, (1) CT",17
+,,,,,,,,
+FLIPL,,X,,nominal,FLIPL,avg = 1.338 +/- 0.653,[0.000 ; 3.000],66
+,,,,,,,,
+FLIPREC,X,,,nominal,FLIPREC,avg = 0.343 +/- 0.475,[0.000 ; 1.000],66
+,,,,,,,,
+fliprec2,,X,,nominal,fliprec2,avg = 1.048 +/- 0.214,[1.000 ; 2.000],66
+,,,,,,,,
+DR4,,X,,nominal,DR4,avg = 1.868 +/- 1.201,"[0.000 ; 4.000] (0) Negative, (1) Weak, (2) Moderate, (3) Strong, (4) Missing",0
+,,,,,,,,
+DR4rec,,X,,nominal,DR4rec,avg = 0.454 +/- 0.499,[0.000 ; 1.000],68
+,,,,,,,,
+DR4pos,,,,nominal,DR4pos,avg = 0.893 +/- 0.309,[0.000 ; 1.000],68
+,,,,,,,,
+trailr2rec,,,,nominal,trailr2rec,avg = 0.571 +/- 0.496,[0.000 ; 1.000],61
+,,,,,,,,
+pAKTcyto,,X,,nominal,phospho-AKT - cytoplasmic,avg = 1.053 +/- 0.756,[0.000 ; 2.000],85
+,,,,,,,,
+pAKTnuc,,X,,nominal,phospho-AKT - nuclear,avg = 1.305 +/- 0.978,[0.000 ; 3.000],85
+,,,,,,,,
+pAKTnucrec,X,,,nominal,pAKT Nuclear recoded (+ vs -),avg = 0.759 +/- 0.428,[0.000 ; 1.000],85
+,,,,,,,,
+pAKTcytorec,X,,,nominal,pAKT cytoplasmic recoded as - vs +,avg = 0.740 +/- 0.439,[0.000 ; 1.000],85
+,,,,,,,,
+pAKTtotal,,X,,nominal,pAKTtotal,avg = 2.257 +/- 0.987,[0.000 ; 3.000],85
+,,,,,,,,
+CD24,,X,,nominal,CD24 ordinal,avg = 1.875 +/- 0.961,[0.000 ; 3.000],117
+,,,,,,,,
+CD24ordrec,X,,,nominal,"CD24 ordinal, recoded into low vs. high",avg = 0.655 +/- 0.476,[0.000 ; 1.000],117
+,,,,,,,,
+CD24Hscore,,,,numeric,CD24 H Score,avg = 159.557 +/- 91.492,[0.000 ; 300.000],117
+,,,,,,,,
+CD24lum,,X,,nominal,CD24 luminal,avg = 0.388 +/- 0.488,[0.000 ; 1.000],117
+,,,,,,,,
+NucCD24,,X,,nominal,CD24 nuclear,avg = 0.133 +/- 0.340,[0.000 ; 1.000],117
+,,,,,,,,
+ATR,,X,,nominal,ATR,avg = 1.830 +/- 0.784,[0.000 ; 3.000],85
+,,,,,,,,
+ATRRECOD,X,,,nominal,ATR as + or -,avg = 0.695 +/- 0.461,[0.000 ; 1.000],85
+,,,,,,,,
+CD24Hrec,,,,nominal,CD24 H Score (Binned),"mode = Intermediate (132), least = Negative (30)","Negative (30), Low (87), Intermediate (132), High (96)",117
+,,,,,,,,
+pS6,,,,numeric,p-S6 H-score,avg = 55.080 +/- 67.147,[0.000 ; 300.000],85
+,,,,,,,,
+pS6rec,,,,nominal,pS6 recoded hi vs low (around median of 30),avg = 0.504 +/- 0.501,[0.000 ; 1.000],85
+,,,,,,,,
+pS6negpos,,X,,nominal,pS6 (Negative v Positive),avg = 0.621 +/- 0.486,[0.000 ; 1.000],85
+,,,,,,,,
+PI9,,X,,nominal,PI-9,avg = 1.402 +/- 0.733,[0.000 ; 3.000],96
+,,,,,,,,
+FLIPsCyto,,X,,nominal,FLIP-short (cytoplasmic),avg = 1.982 +/- 0.725,[1.000 ; 3.000],83
+,,,,,,,,
+FLIPsNuc,,X,,nominal,FLIP-short (Nuclear),avg = 0.063 +/- 0.243,[0.000 ; 1.000],80
+,,,,,,,,
+FLIP,,X,,nominal,FLIP (Long or Short),avg = 0.248 +/- 0.433,[0.000 ; 1.000],35
+,,,,,,,,
+pERK,,X,,nominal,p-ERK 4 categories,avg = 0.253 +/- 0.560,[0.000 ; 3.000],122
+,,,,,,,,
+pERKrec,,,,nominal,p-ERK (Negative v Positive),avg = 0.200 +/- 0.401,[0.000 ; 1.000],122
+,,,,,,,,
+IRF2,,X,,nominal,IRF-2 in 4 categories,avg = 2.021 +/- 0.792,[0.000 ; 3.000],174
+,,,,,,,,
+IRF1,,,,nominal,IRF-1 (scored by Ahmad),avg = 0.518 +/- 0.500,[0.000 ; 1.000],72
+,,,,,,,,
+Tcells,,,,numeric,Tcells,avg = 45.980 +/- 34.528,[1.000 ; 100.000],363
+,,,,,,,,
+CoreArea,,,,numeric,Core area in mm square,avg = 0.310 +/- 0.073,[0.064 ; 0.680],106
+,,,,,,,,
+CellsPerArea,,,,numeric,CellsPerArea,avg = 153.828 +/- 109.312,[2.786 ; 404.494],363
+,,,,,,,,
+Tcellsintumor,,,,numeric,T cells within tumor nests,avg = 8.986 +/- 14.496,[0.000 ; 110.000],107
+,,,,,,,,
+TperArea,,,,numeric,TperArea,avg = 29.632 +/- 46.435,[0.000 ; 392.857],107
+,,,,,,,,
+JJ,,,,nominal,T cells within tumor nests (Binned),"mode = <= 2 (142), least = 3 - 7 (104)","<= 2 (142), 3 - 7 (104), 8+ (109)",107
+,,,,,,,,
+at20,,,,nominal,at20,avg = 0.383 +/- 0.487,[0.000 ; 1.000],107
+,,,,,,,,
+at25,,,,nominal,TperArea (Binned),"mode = <=25 (246), least = >25 (109)","<=25 (246), >25 (109)",107
+,,,,,,,,
+at30,,,,nominal,at30,avg = 0.259 +/- 0.439,[0.000 ; 1.000],107
+,,,,,,,,
+at40,,,,nominal,at40,avg = 0.214 +/- 0.411,[0.000 ; 1.000],107
+,,,,,,,,
+at50,,,,nominal,at50,avg = 0.175 +/- 0.380,[0.000 ; 1.000],107
+,,,,,,,,
+nucint3,,,,nominal,STAT1nuclear3,avg = 0.374 +/- 0.883,[0.000 ; 3.000],58
+,,,,,,,,
+ITTC50stat13,,,,nominal,ITTC50stat13,avg = 0.021 +/- 0.143,[0.000 ; 1.000],128
+,,,,,,,,
+Perarea,,,,nominal,Percentage tumour area per core,avg = 2.552 +/- 0.929,[1.000 ; 4.000],107
+,,,,,,,,
+areaper,,,,nominal,areaper,avg = 2.448 +/- 0.929,[1.000 ; 4.000],107
+,,,,,,,,
+actualarea,,,,numeric,Actual Area,avg = 0.150 +/- 0.081,[0.030 ; 0.416],107
+,,,,,,,,
+TCPAA,,,,numeric,TCPAA,avg = 66.374 +/- 106.952,[0.000 ; 807.692],107
+,,,,,,,,
+TCPAAnegvspos,,,,nominal,TCPAAnegvspos,avg = 0.848 +/- 0.360,[0.000 ; 1.000],107
+,,,,,,,,
+CD16,,,,nominal,CD16,avg = 0.392 +/- 0.489,[0.000 ; 1.000],44
+,,,,,,,,
+CD3MHC,,,,nominal,CD3MHC,avg = 3.302 +/- 1.583,[0.000 ; 5.000],108
+,,,,,,,,
+Tstroma,,,,nominal,Peri-tumoural CD3+ cells,avg = 1.713 +/- 0.652,[1.000 ; 3.000],106
+,,,,,,,,
+CD68,,,,numeric,CD68,avg = 9.184 +/- 11.942,[0.000 ; 54.000],54
+,,,,,,,,
+CD68groups,,,,nominal,CD68 (Binned),"mode = <= 2 (159), least = 3 - 9 (119)","<= 2 (159), 3 - 9 (119), 10+ (130)",54
+,,,,,,,,
+CD68in2gps,,,,nominal,CD68 (Binned),"mode = <= 10 (292), least = 11+ (116)","<= 10 (292), 11+ (116)",54
+,,,,,,,,
+MHC2,,,,nominal,MHC-II in tumour,avg = 0.087 +/- 0.351,[0.000 ; 2.000],49
+,,,,,,,,
+MHC2cat,,,,nominal,MHC2cat,avg = 0.065 +/- 0.247,[0.000 ; 1.000],49
+,,,,,,,,
+apcMHC2,,,,nominal,MHC-II in stromal cells,avg = 0.930 +/- 1.030,[0.000 ; 3.000],47
+,,,,,,,,
+apcMHC2rec,,,,nominal,apcMHC2rec,avg = 0.487 +/- 0.500,[0.000 ; 1.000],47
+,,,,,,,,
+raetigbrown,,,,numeric,raetigbrown,avg = 92231.504 +/- 48372.490,[10.000 ; 236706.000],43
+,,,,,,,,
+raetigblue,,,,numeric,raetigblue,avg = 5077.709 +/- 5081.482,[0.000 ; 33924.000],43
+,,,,,,,,
+raetigrec,,,,nominal,raetigrec,avg = 1.229 +/- 0.421,[1.000 ; 2.000],43
+,,,,,,,,
+raetiebrown,,,,numeric,raetiebrown,avg = 136166.122 +/- 43553.295,[3824.000 ; 268224.000],45
+,,,,,,,,
+raetieblue,,,,numeric,raetieblue,avg = 25630.703 +/- 12690.440,[3490.000 ; 101115.000],45
+,,,,,,,,
+raetierec,,,,nominal,raetierec,avg = 1.487 +/- 0.500,[1.000 ; 2.000],45
+,,,,,,,,
+raetierec2,,,,nominal,raetierec2,avg = 1.787 +/- 0.410,[1.000 ; 2.000],45
+,,,,,,,,
+micabrown,,,,numeric,micabrown,avg = 154130.923 +/- 39119.185,[34337.000 ; 262103.000],61
+,,,,,,,,
+micablue,,,,numeric,micablue,avg = 27909.800 +/- 11178.227,[5437.000 ; 70173.000],61
+,,,,,,,,
+micarec,,,,nominal,micarec,avg = 1.514 +/- 0.500,[1.000 ; 2.000],61
+,,,,,,,,
+mica2,,,,nominal,mica2,avg = 1.703 +/- 0.457,[1.000 ; 2.000],61
+,,,,,,,,
+RAETigmica,,,,nominal,RAETigmica,avg = 1.175 +/- 1.061,[0.000 ; 3.000],84
+,,,,,,,,
+raetigmica3,,,,nominal,raetigmica3,avg = 1.161 +/- 1.057,[0.000 ; 3.000],84
+,,,,,,,,
+raetiemica,,,,nominal,raetiemica,avg = 2.347 +/- 1.022,[0.000 ; 3.000],82
+,,,,,,,,
+emica,,,,nominal,emica,avg = 2.179 +/- 1.141,[0.000 ; 3.000],82
+,,,,,,,,
+IGIE,,,,nominal,IGIE,avg = 1.257 +/- 1.007,[0.000 ; 3.000],65
+,,,,,,,,
+IGIErec,,,,nominal,IGIErec,avg = 1.239 +/- 1.003,[0.000 ; 3.000],65
+,,,,,,,,
+IGIErec2,,,,nominal,IGIErec2,avg = 1.433 +/- 0.825,[1.000 ; 3.000],65
+,,,,,,,,
+stresmols,,,,nominal,stresmols,avg = 4.716 +/- 2.166,[1.000 ; 8.000],99
+,,,,,,,,
+statmica,,,,nominal,statmica,avg = 1.624 +/- 0.997,[0.000 ; 3.000],95
+,,,,,,,,
+ulbp1browm,,,,numeric,ulbp1browm,avg = 46354.930 +/- 39170.150,[739.000 ; 199254.000],46
+,,,,,,,,
+ulbp1rec,,,,nominal,ulbp1rec,avg = 0.596 +/- 0.491,[0.000 ; 1.000],46
+,,,,,,,,
+ulbp2brown,,,,numeric,ulbp2brown,avg = 18056.579 +/- 22535.739,[47.000 ; 208945.000],34
+,,,,,,,,
+ulbp2rec,,,,nominal,ulbp2rec,avg = 0.523 +/- 0.500,[0.000 ; 1.000],34
+,,,,,,,,
+ulbp3brown,,,,numeric,ulbp3brown,avg = 25283.706 +/- 23806.452,[126.000 ; 142811.000],20
+,,,,,,,,
+ulbp3rec,,,,nominal,ulbp3rec,avg = 0.367 +/- 0.483,[0.000 ; 1.000],34
+,,,,,,,,
+ulbp12,,,,nominal,ulbp12,avg = 1.130 +/- 0.726,[0.000 ; 2.000],55
+,,,,,,,,
+ulbp13,,,,nominal,ulbp13,avg = 0.980 +/- 0.817,[0.000 ; 2.000],54
+,,,,,,,,
+ulbp23,,,,nominal,ulbp23,avg = 0.891 +/- 0.761,[0.000 ; 2.000],41
+,,,,,,,,
+micaulbp1,,,,nominal,micaulbp1,avg = 1.318 +/- 0.760,[0.000 ; 2.000],78
+,,,,,,,,
+micaulbp2,,,,nominal,micaulbp2,avg = 1.234 +/- 0.661,[0.000 ; 2.000],73
+,,,,,,,,
+micaulbp3,,,,nominal,micaulbp3,avg = 1.085 +/- 0.717,[0.000 ; 2.000],72
+,,,,,,,,
+igulbp1,,,,nominal,igulbp1,avg = 0.830 +/- 0.727,[0.000 ; 2.000],74
+,,,,,,,,
+igulbp2,,,,nominal,igulbp2,avg = 0.753 +/- 0.674,[0.000 ; 2.000],57
+,,,,,,,,
+igulbp3,,,,nominal,igulbp3,avg = 0.597 +/- 0.728,[0.000 ; 2.000],60
+,,,,,,,,
+ieulbp1,,,,nominal,ieulbp1,avg = 1.398 +/- 0.633,[0.000 ; 2.000],73
+,,,,,,,,
+ieulbp2,,,,nominal,ieulbp2,avg = 1.312 +/- 0.607,[0.000 ; 2.000],58
+,,,,,,,,
+ieulbp3,,,,nominal,ieulbp3,avg = 1.173 +/- 0.640,[0.000 ; 2.000],63
+,,,,,,,,
+micaittc,,,,nominal,micaittc,avg = 2.103 +/- 1.063,[0.000 ; 3.000],143
+,,,,,,,,
+caspase3,,,,nominal,caspase3,avg = 0.638 +/- 0.846,[0.000 ; 3.000],64
+,,,,,,,,
+caspase3per,,,,numeric,caspase3per,avg = 36.636 +/- 42.180,[0.000 ; 100.000],68
+,,,,,,,,
+caspase3nuc,,,,nominal,caspase3nuc,avg = 0.107 +/- 0.309,[0.000 ; 1.000],69
+,,,,,,,,
+caspase3percentlovhi,,,,nominal,caspase3percentlovhi,avg = 0.350 +/- 0.478,[0.000 ; 1.000],68
+,,,,,,,,
+cas3weakvstrong,,,,nominal,cas3weakvstrong,avg = 0.141 +/- 0.348,[0.000 ; 1.000],64
+,,,,,,,,
+cas3negvpos,,,,nominal,cas3negvpos,avg = 0.447 +/- 0.498,[0.000 ; 1.000],64
+,,,,,,,,
+cas3p53,,,,nominal,cas3p53,avg = 1.381 +/- 1.124,[0.000 ; 3.000],79
+,,,,,,,,
+Vegfa,,,,nominal,Vegfa,avg = 1.517 +/- 1.039,[0.000 ; 3.000],133
+,,,,,,,,
+stat1nuc2,,,,nominal,stat1 nuclear pos v neg,avg = 0.180 +/- 0.385,[0.000 ; 1.000],57
+,,,,,,,,
+socs1,,,,nominal,socs1,avg = 0.730 +/- 0.869,[0.000 ; 3.000],66
+,,,,,,,,
+nstat1socs1,,,,nominal,nstat1socs1,avg = 1.215 +/- 1.102,[0.000 ; 3.000],109
+,,,,,,,,
+vegfc,,,,nominal,vegfc,avg = 1.289 +/- 0.947,[0.000 ; 3.000],53
+,,,,,,,,
+PI9rec,,,,nominal,PI9rec,avg = 0.913 +/- 0.283,[0.000 ; 1.000],96
+,,,,,,,,
+itcc,,,,nominal,itcc,avg = 1.659 +/- 0.475,[1.000 ; 2.000],107
+,,,,,,,,
+p19itcc,,,,nominal,p19itcc,avg = 3.517 +/- 0.712,[1.000 ; 4.000],118
+,,,,,,,,
+vegfchilo,,,,nominal,vegfchilo,avg = 1.350 +/- 0.477,[1.000 ; 2.000],53
+,,,,,,,,
+vegfcittcc,,,,nominal,vegfcittcc,avg = 2.685 +/- 1.073,[1.000 ; 4.000],119
+,,,,,,,,
+SOCS1hilo,,,,nominal,SOCS1hilo,avg = 0.521 +/- 0.500,[0.000 ; 1.000],109
+,,,,,,,,
+IL17tc,,,,nominal,IL17tc,avg = 0.412 +/- 0.614,[0.000 ; 3.000],74
+,,,,,,,,
+IL17m,,,,nominal,IL17m,avg = 0.751 +/- 0.819,[0.000 ; 3.000],60
+,,,,,,,,
+ctenc,,,,numeric,h score cytoplasmic,avg = 116.466 +/- 57.684,[0.000 ; 250.000],104
+,,,,,,,,
+ctenn,,,,numeric,hscore nuclear,avg = 48.243 +/- 30.373,[10.000 ; 100.000],425
+,,,,,,,,
+ctencwml,,,,nominal,"weak<70,mod 70-120, hi >120",avg = 2.134 +/- 0.869,[0.000 ; 3.000],104
+,,,,,,,,
+crenn,,,,nominal,0 neagtive 1 positive,avg = 0.103 +/- 0.305,[0.000 ; 1.000],104
+,,,,,,,,
+cxcl12,,,,nominal,cxcl12,avg = 1.729 +/- 0.884,[0.000 ; 3.000],170
+,,,,,,,,
+cxcl12goodbad,,,,nominal,cxcl12goodbad,avg = 1.709 +/- 0.455,[1.000 ; 2.000],170
+,,,,,,,,
+CD8Tcells,,,,numeric,Cells/mm2,avg = 52.194 +/- 144.247,[0.000 ; 2091.255],109
+,,,,,,,,
+GradedCD8,,,,nominal,GradedCD8,avg = 0.801 +/- 0.641,[0.000 ; 2.000],110
+,,,,,,,,
+LovsHiCD8Tcells,,,,nominal,LovsHiCD8Tcells,avg = 0.125 +/- 0.331,[0.000 ; 1.000],110
+,,,,,,,,
+"The columns to use for predicting survival start from cd46 onwards ignoring Chemo, Radio, radiorec and CHEMOREC (plus you can use age and gender).  ",,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,* Inferred from other attributes,
